@@ -61,7 +61,7 @@ const ModalCreate = () => {
           },
         });
         if (res.status === 200) {
-          toast.error("Data successfully!");
+          toast.success("Data successfully!");
           handleClose();
         } else {
           // toast.error("This user is already registered or an error occurred!");

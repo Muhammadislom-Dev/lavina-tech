@@ -26,8 +26,6 @@ function createData(
   return { name, calories, fat, carbs, protein };
 }
 
-
-
 var CryptoJS = require("crypto-js/md5");
 function Book() {
   const [dataId, setDataId] = useState("");
@@ -64,21 +62,22 @@ function Book() {
           </TableRow>
         </TableHead>
         <TableBody>
-          {data?.map((row: any) => (
-            <TableRow
-              key={row?.book?.isbn}
-              sx={{ "&:last-child td, &:last-child th": { border: 0 } }}>
-              <TableCell component="th" scope="row">
-                {row?.book?.isbn}
-              </TableCell>
-              <TableCell onClick={() => setDataId(row.book.id)} align="right">
-                <DeleteModal dataId={row.book.id} />
-              </TableCell>
-              <TableCell onClick={() => setDataId(row.book.id)} align="right">
-                <EditModal dataId={row.book.id} />
-              </TableCell>
-            </TableRow>
-          ))}
+          {data &&
+            data?.map((row: any) => (
+              <TableRow
+                key={row?.book?.isbn}
+                sx={{ "&:last-child td, &:last-child th": { border: 0 } }}>
+                <TableCell component="th" scope="row">
+                  {row?.book?.isbn}
+                </TableCell>
+                <TableCell onClick={() => setDataId(row.book.id)} align="right">
+                  <DeleteModal dataId={row.book.id} />
+                </TableCell>
+                <TableCell onClick={() => setDataId(row.book.id)} align="right">
+                  <EditModal dataId={row.book.id} />
+                </TableCell>
+              </TableRow>
+            ))}
         </TableBody>
       </Table>
 
