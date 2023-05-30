@@ -60,9 +60,15 @@ const ModalCreate = () => {
             Sign: CryptoJS(sign),
           },
         });
+        if (res.status === 200) {
+          toast.error("Data successfully!");
+          handleClose();
+        } else {
+          // toast.error("This user is already registered or an error occurred!");
+        }
       } catch (error) {
         console.log("Auth dispatch error", error);
-        toast.error("This user is already registered or an error occurred!");
+        // toast.error("This user is already registered or an error occurred!");
       }
     }
   );
