@@ -1,0 +1,16 @@
+.sidebar-link {
+  font-family: "Proxima Nova";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 20px;
+  color: #05101d;
+  text-decoration: none;
+  padding: 6px 27px;
+  transition: 0.3s all ease-in;
+  border-radius: 8px;
+}
+
+.sidebar-link:hover {
+  background: #f3f8ff;
+}
